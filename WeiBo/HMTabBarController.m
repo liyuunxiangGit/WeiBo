@@ -7,7 +7,7 @@
 //
 
 #import "HMTabBarController.h"
-
+#import "HMTabBar.h"
 @interface HMTabBarController ()
 
 @end
@@ -21,6 +21,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setUpAllChildViewController];
     
+    HMTabBar *tabbar = [[HMTabBar alloc]init];
+    //@property(nonatomic,readonly) UITabBar *tabBar   只读属性，如果想赋值的话需要用kvc kvc修改readonly属性
+//    self.tabBar = tabbar;
+    [self setValue:tabbar forKeyPath:@"tabBar"];
     
     
 }
